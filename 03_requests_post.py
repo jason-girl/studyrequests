@@ -12,11 +12,12 @@ import json
 # 2.准备接口三要素
 # 请求地址+请求方式
 url = "http://127.0.0.1:8000/api/departments/"
+# url = "https://httpbin.org/post"
 # 请求参数
 # x-www-form-urlencoded
 # data = {
 #     "username": "Tom",
-#     "password": "123456",
+#     "age": 6,
 #     "hubby": "Jerry"
 # }
 # json格式请求参数
@@ -30,7 +31,9 @@ data = {
         }
     ]
 }
+# 添加请求头
+# headers = {"contenType": "application/json"}
 # 发送请求
 response = requests.get(url=url, json=data)
 # 返回值
-print(response)
+print(response.text)

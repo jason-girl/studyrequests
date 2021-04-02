@@ -1,0 +1,7 @@
+.idea/**/*
+logs/**/*
+Result/**/*
+PySe/test.py
+Utils/clear_data.py
+__pycache__
+.vscode
