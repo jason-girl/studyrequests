@@ -6,6 +6,7 @@
 
 
 import requests
+import json
 
 
 class SendMethod:
@@ -32,10 +33,18 @@ class SendMethod:
         else:
             return response.json()
 
+    @staticmethod
+    def format_response(response):
+        """
+        :param response: 返回数据
+        :return:
+        """
+        return json.dumps(response, indent=2, ensure_ascii=False)
+
 
 if __name__ == '__main__':
     url = "http://127.0.0.1:8000/api/departments/"
-    method = "delete"
-    params = {"$dep_id_list": "T03,T04,T01"}
+    method = "get"
+    params = {"$dep_id_list": "111,113,112"}
     res = SendMethod.send_method(method, url, params)
-    print(res)
+    print(SendMethod.format_response(res))
